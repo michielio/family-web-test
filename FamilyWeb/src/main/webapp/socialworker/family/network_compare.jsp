@@ -47,10 +47,9 @@
 	</core-toolbar>
 	<div class="content" fit layout horizontal>
 		<div class="network_container" id="container1">
-            <div class="title">
-            <div class="date" id="datumnetwork1"> Netwerk gemaakt op 21-02-2015</div>
-            <core-icon-button class="fullscreen" onclick="WAT TE DOEN HIER?" icon="fullscreen"></core-icon-button>
-			</div>
+			<h1 class="title">
+            <div id = "datumnetwork1"> Netwerk gemaakt op 21-02-2015</div>
+            </h1>
 			<div class="network" id = "network1">
 			</div>
 			<div class="sidebar">
@@ -60,7 +59,7 @@
 				</select> 
 			</div>
 			<div class="contact_groups" >
-			<h1 class="title">Contactgroepen</h1>
+			<p>Contactgroepen</p>
 			<ul id = "network1contact_groups">
 			</ul>
 			</div>
@@ -78,10 +77,9 @@
 			</div>
 		</div>
 		<div class="network_container" id="container2">
-			<div class="title">
-            <div class="date" id="datumnetwork2"> Netwerk gemaakt op 21-02-2015</div>
-            <core-icon-button class="fullscreen" onclick="WAT TE DOEN HIER?" icon="fullscreen"></core-icon-button>
-			</div>
+			<h1 class="title">
+            <div id = "datumnetwork2"> Netwerk gemaakt op 21-02-2015</div>
+            </h1>
 			<div class="network" id = "network2">
 			</div>
 			<div class="sidebar">
@@ -135,78 +133,117 @@
     <script>
 
 // nodes is een array waarin elk uniek contact instaat. Er staat een naam bij, bij welke groep het contact hoort (vrienden, Buren etc)
-var nodesNetwork = ${nodesNetwork};
-// 			{"allNetworks" : [ 
-// 						{"person1" :
-// 										[
-// 											{"datum": "13-05-2015", "commentaar": "Commentaar persoon 1 13-05-2015", "nodes": 
-// 												[	
-// 												   {"name":"De Client","group":0, "commentaar": ""},
-// 	//											   {"name":"Harry","group":1, "commentaar": ""},
-// 	//											   {"name":"Hans","group":1, "commentaar": ""},
-// 												   {"name":"John","group":2, "commentaar": ""},
-// 												   {"name":"Wouter","group":2, "commentaar": ""},
-// 												   {"name":"Billy","group":2, "commentaar": ""},
-// 												   {"name":"Bert","group":3, "commentaar": ""},
-// 												   {"name":"Sjaak","group":3, "commentaar": ""},
-// 												   {"name":"Klaas","group":3, "commentaar": ""}
-// 												]
-// 											},
-// 											{"datum": "14-05-2015", "commentaar": "commentaar persoon 1 14-05-2015", "nodes":
-// 												[ 
-// 												   {"name":"De Client","group":0, "commentaar": ""},
-// 												   {"name":"Harry","group":1, "commentaar": ""},
-// 												   {"name":"Hans","group":1, "commentaar": ""},
-// 												   {"name":"Wouter","group":2, "commentaar": ""},
-// 												   {"name":"Billy","group":2, "commentaar": ""},
-// 												   {"name":"Bert","group":3, "commentaar": ""},
-// 												   {"name":"Sjaak","group":3, "commentaar": ""},
-// 												   {"name":"Klaas","group":3, "commentaar": ""}
-// 												]
-// 											},
-// 											{"datum": "15-05-2015", "commentaar": "commentaar persoon 1 15-05-2015", "nodes":
-// 												[ 
-// 												   {"name":"De Client","group":0, "commentaar": ""},
-// 												   {"name":"Harry","group":1, "commentaar": ""},
-// 												   {"name":"Hans","group":1, "commentaar": ""},
-// 												   {"name":"Wouter","group":2, "commentaar": ""},
-// 												   {"name":"Billy","group":2, "commentaar": ""},
-// 												   {"name":"Bert","group":3, "commentaar": ""},
-// 												   {"name":"Sjaak","group":3, "commentaar": ""},
-// 												   {"name":"Klaas","group":3, "commentaar": ""},
-// 												   {"name":"Bert","group":4, "commentaar": ""},
-// 												]
-// 											}
-// 									    ]
-// 									  },
-// 						{"person2" :
-// 									  [
-// 									    {"datum": "17-05-2015", "commentaar": "commentaar persoon 2 17-05-2015", "nodes":
-// 										  [
-//     										  {"name":"De Client","group":0, "commentaar": ""},
-//     										  {"name":"Truus","group":1, "commentaar": ""},
-//     										  {"name":"Buurmeisje","group":1, "commentaar": ""},
-//     										  {"name":"John","group":2, "commentaar": ""},
-//     										  {"name":"Henkie","group":2, "commentaar": ""},
-//     										  {"name":"Sjaak","group":3, "commentaar": ""},
-//     										  {"name":"Eline","group":4, "commentaar": ""}
-//   										  ]
-// 									    },
-// 									    {"datum": "19-05-2015", "commentaar": "commentaar persoon 2 17-05-2015", "nodes":
-// 											  [
-// 	    										  {"name":"De Client","group":0, "commentaar": ""},
-// 	    										  {"name":"Truus","group":1, "commentaar": ""},
-// 	    										  {"name":"Buurmeisje","group":1, "commentaar": ""},
-// 	    										  {"name":"John","group":2, "commentaar": ""},
-// 	    										  {"name":"Henkie","group":2, "commentaar": ""},
-// 	    										  {"name":"Sjaak","group":3, "commentaar": ""},
-// 	    										  {"name":"Eline","group":4, "commentaar": ""}
-// 	  										  ]
-// 										 }
-// 									  ]
-// 									}
-// 								]
-// 							}
+var nodesNetwork = //{"allNetworks" : [ 
+//						{"person1" :
+//										[
+//											{"datum": "13-05-2015", "commentaar": "Commentaar persoon 1 13-05-2015", "nodes": 
+//												[	
+//												   {"name":"De Client","group":0, "commentaar": ""},
+//	//											   {"name":"Harry","group":1, "commentaar": ""},
+//	//											   {"name":"Hans","group":1, "commentaar": ""},
+//												   {"name":"John","group":2, "commentaar": ""},
+//												   {"name":"Wouter","group":2, "commentaar": ""},
+//												   {"name":"Billy","group":2, "commentaar": ""},
+//												   {"name":"Bert","group":3, "commentaar": ""},
+//												   {"name":"Sjaak","group":3, "commentaar": ""},
+//												   {"name":"Klaas","group":3, "commentaar": ""}
+//												]
+//											}
+//										]
+//									}
+//								]
+//							}
+// 							{"allNetworks":
+//								[
+//								  {"Sjaak Haak":
+//									[
+//									  {"nodes":
+//												[
+//													{"name":"Sjaak Haak","group":0},
+//													{"name":"bert","group":1},
+//													{"name":"Hans","group":2},
+//													{"name":"Burjongen","group":3}
+//												],
+//												"datum":"2015-06-26","commentaar":"Dit netwerk is een test"
+//											  }
+//										  ]
+//									  }
+//								  ]
+//							  };
+
+ 
+			{"allNetworks" : [ 
+						{"person1" :
+										[
+											{"datum": "13-05-2015", "commentaar": "Commentaar persoon 1 13-05-2015", "nodes": 
+												[	
+												   {"name":"De Client","group":0, "commentaar": ""},
+	//											   {"name":"Harry","group":1, "commentaar": ""},
+	//											   {"name":"Hans","group":1, "commentaar": ""},
+												   {"name":"John","group":2, "commentaar": ""},
+												   {"name":"Wouter","group":2, "commentaar": ""},
+												   {"name":"Billy","group":2, "commentaar": ""},
+												   {"name":"Bert","group":3, "commentaar": ""},
+												   {"name":"Sjaak","group":3, "commentaar": ""},
+												   {"name":"Klaas","group":3, "commentaar": ""}
+												]
+											},
+											{"datum": "14-05-2015", "commentaar": "commentaar persoon 1 14-05-2015", "nodes":
+												[ 
+												   {"name":"De Client","group":0, "commentaar": ""},
+												   {"name":"Harry","group":1, "commentaar": ""},
+												   {"name":"Hans","group":1, "commentaar": ""},
+												   {"name":"Wouter","group":2, "commentaar": ""},
+												   {"name":"Billy","group":2, "commentaar": ""},
+												   {"name":"Bert","group":3, "commentaar": ""},
+												   {"name":"Sjaak","group":3, "commentaar": ""},
+												   {"name":"Klaas","group":3, "commentaar": ""}
+												]
+											},
+											{"datum": "15-05-2015", "commentaar": "commentaar persoon 1 15-05-2015", "nodes":
+												[ 
+												   {"name":"De Client","group":0, "commentaar": ""},
+												   {"name":"Harry","group":1, "commentaar": ""},
+												   {"name":"Hans","group":1, "commentaar": ""},
+												   {"name":"Wouter","group":2, "commentaar": ""},
+												   {"name":"Billy","group":2, "commentaar": ""},
+												   {"name":"Bert","group":3, "commentaar": ""},
+												   {"name":"Sjaak","group":3, "commentaar": ""},
+												   {"name":"Klaas","group":3, "commentaar": ""},
+												   {"name":"Bert","group":4, "commentaar": ""},
+												]
+											}
+									    ]
+									  },
+						{"person2" :
+									  [
+									    {"datum": "17-05-2015", "commentaar": "commentaar persoon 2 17-05-2015", "nodes":
+										  [
+    										  {"name":"De Client","group":0, "commentaar": ""},
+    										  {"name":"Truus","group":1, "commentaar": ""},
+    										  {"name":"Buurmeisje","group":1, "commentaar": ""},
+    										  {"name":"John","group":2, "commentaar": ""},
+    										  {"name":"Henkie","group":2, "commentaar": ""},
+    										  {"name":"Sjaak","group":3, "commentaar": ""},
+    										  {"name":"Eline","group":4, "commentaar": ""}
+  										  ]
+									    },
+									    {"datum": "19-05-2015", "commentaar": "commentaar persoon 2 17-05-2015", "nodes":
+											  [
+	    										  {"name":"De Client","group":0, "commentaar": ""},
+	    										  {"name":"Truus","group":1, "commentaar": ""},
+	    										  {"name":"Buurmeisje","group":1, "commentaar": ""},
+	    										  {"name":"John","group":2, "commentaar": ""},
+	    										  {"name":"Henkie","group":2, "commentaar": ""},
+	    										  {"name":"Sjaak","group":3, "commentaar": ""},
+	    										  {"name":"Eline","group":4, "commentaar": ""}
+	  										  ]
+										 }
+									  ]
+									}
+								]
+							}
+
 			
 console.dir(nodesNetwork);
 
@@ -214,73 +251,107 @@ console.dir(nodesNetwork);
 // "target", Waar hij naar toe gaat. Alle verbinden moeten naar 0 gaan dat is de eerste node die ook meteen de Client is.
 // Verder heb je distance wat de afstand tussen de twee betekend. De strength dat de hoeveelheid contact aangeeft. En het type wat het medium aangeeft 
 
- var linksNetwork = ${linksNetwork};
-	 //{"allNetworks" : [
-// 						{ "person1":
-// 							[
-// 								{"13-05-2015":
-// 								  [
-// //							  { "source": 1, "target": 0, "distance": 1, "strength": 5, "type": 1, "group":1},
-// //						      { "source": 2, "target": 0, "distance": 2, "strength": 1, "type": 2, "group":1},
-// 								  { "source": 1, "target": 0, "distance": 3, "strength": 3, "type": 3, "group":2},
-// 								  { "source": 2, "target": 0, "distance": 4, "strength": 2, "type": 4, "group":2},
-// 								  { "source": 3, "target": 0, "distance": 5, "strength": 4, "type": 5, "group":2},
-// 								  { "source": 4, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
-// 								  { "source": 5, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
-// 								  { "source": 6, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3}
-// 								  ]
-// 								},
-// 								{"14-05-2015":
-// 								  [
-// 								  { "source": 1, "target": 0, "distance": 1, "strength": 5, "type": 1, "group":1},
-// 								  { "source": 2, "target": 0, "distance": 2, "strength": 1, "type": 2, "group":1},
-// 								  { "source": 3, "target": 0, "distance": 3, "strength": 3, "type": 3, "group":2},
-// 								  { "source": 4, "target": 0, "distance": 4, "strength": 2, "type": 4, "group":2},
-// 								  { "source": 5, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
-// 								  { "source": 6, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
-// 								  { "source": 7, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3}
-// 								  ]
-// 								},
-// 								{"15-05-2015":
-// 								  [
-// 								  { "source": 1, "target": 0, "distance": 1, "strength": 5, "type": 1, "group":1},
-// 								  { "source": 2, "target": 0, "distance": 2, "strength": 1, "type": 2, "group":1},
-// 								  { "source": 3, "target": 0, "distance": 3, "strength": 3, "type": 3, "group":2},
-// 								  { "source": 4, "target": 0, "distance": 4, "strength": 2, "type": 4, "group":2},
-// 								  { "source": 5, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
-// 								  { "source": 6, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
-// 								  { "source": 7, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
-// 								  { "source": 8, "target": 0, "distance": 3, "strength": 4, "type": 3, "group":4}
-// 								  ]
-// 								},
-// 							]
-// 						},
-// 						{ "person2":
-// 							[
-// 								{"17-05-2015":
-// 								  [
-// 									{ "source": 1, "target": 0, "distance": 1, "strength": 5, "type": 1, "group":1},
-// 									{ "source": 2, "target": 0, "distance": 2, "strength": 1, "type": 2, "group":1},
-// 									{ "source": 3, "target": 0, "distance": 3, "strength": 3, "type": 3, "group":2},
-// 									{ "source": 4, "target": 0, "distance": 5, "strength": 4, "type": 5, "group":2},
-// 									{ "source": 5, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
-// 									{ "source": 6, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":4}
-// 								  ]
-// 								},
-// 								{"19-05-2015":
-// 									  [
-// 										{ "source": 1, "target": 0, "distance": 1, "strength": 5, "type": 1, "group":1},
-// 										{ "source": 2, "target": 0, "distance": 2, "strength": 1, "type": 2, "group":1},
-// 										{ "source": 3, "target": 0, "distance": 3, "strength": 3, "type": 3, "group":2},
-// 										{ "source": 4, "target": 0, "distance": 5, "strength": 4, "type": 5, "group":2},
-// 										{ "source": 5, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
-// 										{ "source": 6, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":4}
-// 									  ]
-// 									}
-// 							]
-// 						}
-// 					]
-// 				}
+var linksNetwork =
+//					{"allNetworks":
+//						[
+//							{"Sjaak Haak":
+//								[
+//						 		 {"2015-06-26":
+//								 	[
+//									  {"distance":5,"source":1,"strength":5,"target":0,"group":1,"type":4},
+//									  {"distance":2,"source":2,"strength":2,"target":0,"group":2,"type":1},
+//									  {"distance":5,"source":3,"strength":4,"target":0,"group":3,"type":3}
+//									]
+//								  }
+//								]
+//							  }
+//							]
+//						  };
+//					{"allNetworks" : [
+//						{ "person1":
+//							[
+//								{"13-05-2015":
+//								  [
+////								  { "source": 1, "target": 0, "distance": 1, "strength": 5, "type": 1, "group":1},
+////								  { "source": 2, "target": 0, "distance": 2, "strength": 1, "type": 2, "group":1},
+//								  { "source": 1, "target": 0, "distance": 3, "strength": 3, "type": 3, "group":2},
+//								  { "source": 2, "target": 0, "distance": 4, "strength": 2, "type": 4, "group":2},
+//								  { "source": 3, "target": 0, "distance": 5, "strength": 4, "type": 5, "group":2},
+//								  { "source": 4, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
+//								  { "source": 5, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
+//								  { "source": 6, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3}
+//								  ]
+//								}
+//							]
+//						}
+//					]
+//				}
+				{"allNetworks" : [
+						{ "person1":
+							[
+								{"13-05-2015":
+								  [
+//								  { "source": 1, "target": 0, "distance": 1, "strength": 5, "type": 1, "group":1},
+//								  { "source": 2, "target": 0, "distance": 2, "strength": 1, "type": 2, "group":1},
+								  { "source": 1, "target": 0, "distance": 3, "strength": 3, "type": 3, "group":2},
+								  { "source": 2, "target": 0, "distance": 4, "strength": 2, "type": 4, "group":2},
+								  { "source": 3, "target": 0, "distance": 5, "strength": 4, "type": 5, "group":2},
+								  { "source": 4, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
+								  { "source": 5, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
+								  { "source": 6, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3}
+								  ]
+								},
+								{"14-05-2015":
+								  [
+								  { "source": 1, "target": 0, "distance": 1, "strength": 5, "type": 1, "group":1},
+								  { "source": 2, "target": 0, "distance": 2, "strength": 1, "type": 2, "group":1},
+								  { "source": 3, "target": 0, "distance": 3, "strength": 3, "type": 3, "group":2},
+								  { "source": 4, "target": 0, "distance": 4, "strength": 2, "type": 4, "group":2},
+								  { "source": 5, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
+								  { "source": 6, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
+								  { "source": 7, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3}
+								  ]
+								},
+								{"15-05-2015":
+								  [
+								  { "source": 1, "target": 0, "distance": 1, "strength": 5, "type": 1, "group":1},
+								  { "source": 2, "target": 0, "distance": 2, "strength": 1, "type": 2, "group":1},
+								  { "source": 3, "target": 0, "distance": 3, "strength": 3, "type": 3, "group":2},
+								  { "source": 4, "target": 0, "distance": 4, "strength": 2, "type": 4, "group":2},
+								  { "source": 5, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
+								  { "source": 6, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
+								  { "source": 7, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
+								  { "source": 8, "target": 0, "distance": 3, "strength": 4, "type": 3, "group":4}
+								  ]
+								},
+							]
+						},
+						{ "person2":
+							[
+								{"17-05-2015":
+								  [
+									{ "source": 1, "target": 0, "distance": 1, "strength": 5, "type": 1, "group":1},
+									{ "source": 2, "target": 0, "distance": 2, "strength": 1, "type": 2, "group":1},
+									{ "source": 3, "target": 0, "distance": 3, "strength": 3, "type": 3, "group":2},
+									{ "source": 4, "target": 0, "distance": 5, "strength": 4, "type": 5, "group":2},
+									{ "source": 5, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
+									{ "source": 6, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":4}
+								  ]
+								},
+								{"19-05-2015":
+									  [
+										{ "source": 1, "target": 0, "distance": 1, "strength": 5, "type": 1, "group":1},
+										{ "source": 2, "target": 0, "distance": 2, "strength": 1, "type": 2, "group":1},
+										{ "source": 3, "target": 0, "distance": 3, "strength": 3, "type": 3, "group":2},
+										{ "source": 4, "target": 0, "distance": 5, "strength": 4, "type": 5, "group":2},
+										{ "source": 5, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":3},
+										{ "source": 6, "target": 0, "distance": 2, "strength": 2, "type": 4, "group":4}
+									  ]
+									}
+							]
+						}
+					]
+				}
 var personArray = [];
 var netwerk1ChosenPerson = 0;
 var netwerk2ChosenPerson = 0;
@@ -394,7 +465,7 @@ function draw_graphs(networkName, chosenPerson, sliderval){
   console.log("doorgestuurde netwerkname: " + networkName);
   console.log("sliderval" + sliderval);
   console.log(chosenPerson);
-  var i, selectedPerson, thisDatesNodes, thisPersonLinks, selectedNetworkDatesLinks, allNetworksLinksThisPerson, selectedNetworkNodes, selectedNetworkLinks;
+  var i, selectedPerson, thisDatesNodes, thisPersonLinks, allNetworksDatesThisPerson, selectedNetworkDatesLinks, allNetworksLinksThisPerson, selectedNetworkNodes, selectedNetworkLinks;
    //Selecteer juist netwerkNodes
   for ( i = 0; i < nodesNetwork.allNetworks.length; i++ ) {
 	  selectedPerson = nodesNetwork.allNetworks[chosenPerson];
@@ -409,9 +480,12 @@ function draw_graphs(networkName, chosenPerson, sliderval){
 	  console.dir(thisPersonDates);
 	  selectedNetworkNodes = thisPersonDates[sliderval].nodes;
 	  console.dir(selectedNetworkNodes);
-	}	
-  
-  //Selecteer juist netwerkLinks
+	}
+//  allNetworksDatesThisPerson.forEach(function(nodesArray) { 
+//  	 	selectedNetworkNodes = nodesArray.datum;
+//	 	console.dir(selectedNetworkNodes);
+//  })
+	//Selecteer juist netwerkLinks
   for ( i = 0; i < linksNetwork.allNetworks.length; i++ ) {
 	  thisPersonLinks = linksNetwork.allNetworks[chosenPerson];
 	  console.dir(thisPersonLinks);
@@ -457,6 +531,8 @@ function draw_graphs(networkName, chosenPerson, sliderval){
   // we geven alle links mee
   // we geven de charge mee die aangeeft hoeveel afstand elke node van elkaar moeten afhouden
   // we geven de linkDistance mee waarmee we meteen de eerste berekening tegenkomen waar de fysieke afstand tussen contact personen in beeld wordt gebracht
+  console.dir(selectedNetworkNodes);
+  console.log("ben hier");
   var force = d3.layout.force()
 	  .size([width, height])
 	  .nodes(selectedNetworkNodes)
@@ -615,13 +691,13 @@ function draw_graphs(networkName, chosenPerson, sliderval){
   var locations = [{x: middleX, y: middleY}];
   
   var diameterCircle = height - 50;
-  var r = diameterCircle / 2;
+  var ray = diameterCircle / 2;
   
   createLocations();
   function createLocations(){
 	  for ( i = 1; i < distinct.length; i++ ) {
-		  var xvalue = width - 100 * i;
-		  var yvalue = height - 50;
+		  var xvalue = middleX + ray * Math.cos(2 * Math.PI * i / (distinct.length - 1)); 
+		  var yvalue = middleY + ray * Math.sin(2 * Math.PI * i / (distinct.length - 1)); 
 		  console.log(xvalue);
 		  console.log(yvalue);
 		  locations.push({x: xvalue, y: yvalue});
