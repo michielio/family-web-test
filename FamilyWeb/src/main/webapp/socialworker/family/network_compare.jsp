@@ -133,7 +133,7 @@
     <script>
 
 // nodes is een array waarin elk uniek contact instaat. Er staat een naam bij, bij welke groep het contact hoort (vrienden, Buren etc)
-var nodesNetwork = //{"allNetworks" : [ 
+var nodesNetwork = ${nodesNetwork};//{"allNetworks" : [ 
 //						{"person1" :
 //										[
 //											{"datum": "13-05-2015", "commentaar": "Commentaar persoon 1 13-05-2015", "nodes": 
@@ -172,7 +172,7 @@ var nodesNetwork = //{"allNetworks" : [
 //							  };
 
  
-			{"allNetworks" : [ 
+			/*{"allNetworks" : [ 
 						{"person1" :
 										[
 											{"datum": "13-05-2015", "commentaar": "Commentaar persoon 1 13-05-2015", "nodes": 
@@ -242,7 +242,7 @@ var nodesNetwork = //{"allNetworks" : [
 									  ]
 									}
 								]
-							}
+							}*/
 
 			
 console.dir(nodesNetwork);
@@ -251,7 +251,7 @@ console.dir(nodesNetwork);
 // "target", Waar hij naar toe gaat. Alle verbinden moeten naar 0 gaan dat is de eerste node die ook meteen de Client is.
 // Verder heb je distance wat de afstand tussen de twee betekend. De strength dat de hoeveelheid contact aangeeft. En het type wat het medium aangeeft 
 
-var linksNetwork =
+var linksNetwork = ${linksNetwork};
 //					{"allNetworks":
 //						[
 //							{"Sjaak Haak":
@@ -286,7 +286,7 @@ var linksNetwork =
 //						}
 //					]
 //				}
-				{"allNetworks" : [
+				/*{"allNetworks" : [
 						{ "person1":
 							[
 								{"13-05-2015":
@@ -351,7 +351,7 @@ var linksNetwork =
 							]
 						}
 					]
-				}
+				}*/
 var personArray = [];
 var netwerk1ChosenPerson = 0;
 var netwerk2ChosenPerson = 0;
